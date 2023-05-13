@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
 import axios from 'axios';
 import '../App.css';
 
@@ -30,7 +29,6 @@ function App() {
 
   return (
     <div className="App">
-      <Link to="/">Home</Link>
       <input className='Input'
         type="text"
         placeholder="Enter character name"
