@@ -38,7 +38,7 @@ function App() {
       {characters.length > 0 ? (
         characters.map(character => (
           <div key={character.Character.ID}>
-            <h2>{character.Character.Name}</h2>
+            <h2><a href={`https://xivapi.com/character/${character.Character.ID}`}>{character.Character.Name}</a></h2>
             <img src={character.Character.Avatar} alt={character.Character.Name} />
             {/* <p>{character.Character.Bio}</p> */}
           </div>
