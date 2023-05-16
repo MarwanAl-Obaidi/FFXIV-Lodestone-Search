@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 import axios from 'axios';
 import '../App.css';
 
@@ -38,7 +39,7 @@ function App() {
       {characters.length > 0 ? (
         characters.map(character => (
           <div key={character.Character.ID}>
-            <h2><a href={`https://xivapi.com/character/${character.Character.ID}`}>{character.Character.Name}</a></h2>
+            <h2><Link to={"/Character/" + character.Character.ID}>{character.Character.Name}</Link></h2>
             <img src={character.Character.Avatar} alt={character.Character.Name} />
             {/* <p>{character.Character.Bio}</p> */}
           </div>

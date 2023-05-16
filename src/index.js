@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import CharacterSearch from "./pages/CharacterSearch";
 import About from "./pages/About";
 import NoPage from "./pages/NoPage";
+import Character from "./pages/Character";
 import './App.css';
 
 export default function App() {
@@ -16,6 +17,8 @@ export default function App() {
           <Route path="CharacterSearch" element={<CharacterSearch />} />
           <Route path="About" element={<About />} />
           <Route path="*" element={<NoPage />} />
+          {/* <Route path="Character" element={<Character />}/> */}
+          <Route path="/Character/:id" element={<Character />} />
         </Route>
       </Routes>
     </BrowserRouter>
