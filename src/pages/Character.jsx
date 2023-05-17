@@ -22,9 +22,17 @@ function Character() {
 
     return (
         <div>
-            <h2>{character.Character.Name}</h2>
-            <img src={character.Character.Portrait} alt={character.Character.Name} width={500} />
+            <h1>{character.Character.Name}</h1>
+            <img src={character.Character.Portrait} alt={character.Character.Name} width={250} />
             {/* Display other character details here */}
+            <h3>Job: {character.Character.ActiveClassJob.Name}</h3>
+            <h3>Server: {character.Character.Server}</h3>
+            <h3>Free Company: {character.Character.FreeCompanyName}</h3>
+            {character.Character.Gender < 2 ? (
+                <h3>Gender: Male</h3>
+            ) : (
+                <h3>Gender: Female</h3>
+            )}
         </div>
     );
 }
