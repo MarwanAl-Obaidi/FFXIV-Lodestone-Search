@@ -1,49 +1,61 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
-import axios from 'axios';
 import '../App.css';
 
 function App() {
-  const [name, setName] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
   const [characters, setCharacters] = useState([]);
 
   useEffect(() => {
-    const searchCharacters = async () => {
-      const response = await axios.get(`https://xivapi.com/character/search?name=${name}`);
-      const results = response.data.Results;
-      if (results.length > 0) {
-        const characterIds = results.map(result => result.ID);
-        const characterResponses = await Promise.all(characterIds.map(id => axios.get(`https://xivapi.com/character/${id}`)));
-        const charactersData = characterResponses.map(response => response.data);
-        setCharacters(charactersData);
-      } else {
-        setCharacters([]);
-      }
+    if (searchQuery.trim() === '') {
+      setCharacters([]);
+      return;
+    }
+
+    const timer = setTimeout(() => {
+      // Fetch data from the XIVAPI character search API
+      fetch(`https://xivapi.com/character/search?name=${searchQuery}`)
+        .then((response) => response.json())
+        .then((data) => {
+          setCharacters(data.Results);
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
+    }, 1000); // Delay of 1000 milliseconds (one second)
+
+    return () => {
+      clearTimeout(timer); // Clear the timer if the search query changes before the delay expires
     };
+  }, [searchQuery]);
 
-    const delayDebounceFn = setTimeout(() => {
-      searchCharacters();
-    }, 500);
-
-    return () => clearTimeout(delayDebounceFn);
-  }, [name]);
+  const handleSearchChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
 
   return (
-    <div className="App">
-      <input className='Input'
-        type="text"
-        placeholder="Enter character name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
+    <div>
+      <h1>Character Search</h1>
+      <form>
+        <input
+          className="Input"
+          type="text"
+          value={searchQuery}
+          onChange={handleSearchChange}
+          placeholder="Enter character name"
+        />
+      </form>
+
+      <h2>Search Results</h2>
       {characters.length > 0 ? (
-        characters.map(character => (
-          <div key={character.Character.ID}>
-            <h2><Link to={"/Character/" + character.Character.ID}>{character.Character.Name}</Link></h2>
-            <img src={character.Character.Avatar} alt={character.Character.Name} />
-            {/* <p>{character.Character.Bio}</p> */}
-          </div>
-        ))
+        <div>
+          {characters.map((character) => (
+            <div key={character.ID}>
+              <h2><Link to={"/Character/" + character.ID}>{character.Name}</Link></h2>
+              <img src={character.Avatar} alt={character.Name} />
+            </div>
+          ))}
+        </div>
       ) : (
         <p>No characters found.</p>
       )}
