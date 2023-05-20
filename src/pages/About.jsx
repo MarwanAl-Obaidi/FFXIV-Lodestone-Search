@@ -5,10 +5,14 @@ function About() {
     return (
         <div>
             <h1>Currently working on:</h1>
-            <ul>
-                <li>Character Search</li>
-                <li>Item Search</li>
-            </ul>
+            <li>Character Search</li>
+            <li>Character Pages</li>
+            <li>Item Search</li>
+            <li>Item Pages</li>
+            <li>Free Company Search</li>
+            <li>Free Company Pages</li>
+            <li>Data Center / Server List</li>
+            <h1><a href="https://github.com/MarwanAl-Obaidi/FFXIV-Lodestone-Search">Link to GitHub Repository</a></h1>
         </div>
     );
 }
