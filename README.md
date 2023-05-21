@@ -1,3 +1,22 @@
+# FFXIV Lodestone Search
+
+A Lodestone search web app for FINAL FANTASY XIV Online (FFXIV) using ReactJS.
+
+## Current features
+
+- Character Search
+- Character Pages
+
+## Features working or improving upon
+
+- Character Search
+- Character Pages
+- Item Search
+- Item Pages
+- Free Company Search
+- Free Company Pages
+- Data Center / Server List
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
