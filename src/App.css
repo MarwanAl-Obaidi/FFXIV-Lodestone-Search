@@ -7,6 +7,14 @@
   width: 500px;
 }
 
+.News {
+  text-align: center;
+  color: #61dafb;
+  margin: 50px auto;
+  border-radius: 4px;
+  width: 500px;
+}
+
 p,
 a,
 h1,
