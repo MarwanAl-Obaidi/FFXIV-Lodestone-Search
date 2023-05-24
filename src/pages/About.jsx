@@ -4,7 +4,11 @@ import '../App.css';
 function About() {
     return (
         <div>
-            <h1>Currently working on:</h1>
+            <h1>Current features:</h1>
+            <li>Character Search</li>
+            <li>Character Pages</li>
+            <li>News Page</li>
+            <h1>Features working or improving upon:</h1>
             <li>Character Search</li>
             <li>Character Pages</li>
             <li>Item Search</li>

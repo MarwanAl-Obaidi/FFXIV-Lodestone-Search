@@ -6,6 +6,7 @@ A Lodestone search web app for FINAL FANTASY XIV Online (FFXIV) using ReactJS.
 
 - Character Search
 - Character Pages
+- News Page
 
 ## Features working or improving upon
 
