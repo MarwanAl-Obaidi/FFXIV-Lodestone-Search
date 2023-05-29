@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import '../App.css';
 
 function App() {
+  const { t } = useTranslation(); // Access translation functions
+
   const [searchQuery, setSearchQuery] = useState('');
   const [characters, setCharacters] = useState([]);
 
@@ -35,29 +38,31 @@ function App() {
 
   return (
     <div>
-      <h1>Character Search</h1>
+      <h1>{t('characterSearch')}</h1>
       <form>
         <input
           className="Input"
           type="text"
           value={searchQuery}
           onChange={handleSearchChange}
-          placeholder="Enter character name"
+          placeholder={t('searchPlaceholder')}
         />
       </form>
 
-      <h2>Search Results</h2>
+      <h2>{t('searchResults')}</h2>
       {characters.length > 0 ? (
         <div>
           {characters.map((character) => (
             <div key={character.ID}>
-              <h2><Link to={"/Character/" + character.ID}>{character.Name}</Link></h2>
+              <h2>
+                <Link to={`/Character/${character.ID}`}>{character.Name}</Link>
+              </h2>
               <img src={character.Avatar} alt={character.Name} />
             </div>
           ))}
         </div>
       ) : (
-        <p>No characters found.</p>
+        <p>{t('noCharactersFound')}</p>
       )}
     </div>
   );

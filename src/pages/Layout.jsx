@@ -1,9 +1,16 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import '../App.css';
 
 const Layout = () => {
+    const { i18n } = useTranslation(); // Access translation functions and i18n object
+
+    const changeLanguage = (language) => {
+        i18n.changeLanguage(language);
+    };
+
     return (
         <>
             <div className='navBar'>
@@ -33,7 +40,12 @@ const Layout = () => {
                 <body>
                     <div className='BottomText'>
                         <br />
-                        <em>Marwan Al-Obaidi - 2023</em>
+                        <em>
+                            <button class="locale" onClick={() => changeLanguage('en')}>English</button>
+                            <button class="locale" onClick={() => changeLanguage('fr')}>French</button>
+                            <button class="locale" onClick={() => changeLanguage('de')}>German</button>
+                            <button class="locale" onClick={() => changeLanguage('jp')}>Japanese</button>
+                        </em>
                     </div>
                 </body>
             </div>
