@@ -8,6 +8,7 @@ A Lodestone search web app for FINAL FANTASY XIV Online (FFXIV) using ReactJS.
 - Character Pages
 - News Page
 - Data Center / Server List
+- Localization
 
 ## Features working or improving upon
 
@@ -18,6 +19,7 @@ A Lodestone search web app for FINAL FANTASY XIV Online (FFXIV) using ReactJS.
 - Free Company Search
 - Free Company Pages
 - Data Center / Server List
+- Localization
 
 # Getting Started with Create React App
 

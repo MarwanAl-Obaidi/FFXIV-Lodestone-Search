@@ -2,5 +2,7 @@
     "characterSearch": "Character Search",
     "searchPlaceholder": "Enter character name",
     "searchResults": "Search Results",
-    "noCharactersFound": "No characters found."
+    "noCharactersFound": "No characters found.",
+    "noPage": "There is nothing here.",
+    "noPageHome": "HOME"
 }

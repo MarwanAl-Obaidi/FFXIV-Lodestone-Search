@@ -2,5 +2,7 @@
     "characterSearch": "Recherche de personnage",
     "searchPlaceholder": "Entrez le nom du personnage",
     "searchResults": "Résultats de la recherche",
-    "noCharactersFound": "Aucun personnage trouvé."
+    "noCharactersFound": "Aucun personnage trouvé.",
+    "noPage": "Il n'y a rien ici.",
+    "noPageHome": "PAGE D'ACCUEIL"
 }
